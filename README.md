@@ -3,7 +3,7 @@ AI-Powered Knowledge Graph to Manim Animation Automation
 ## Short description
 A pipeline that accepts a student query (concept), retrieves structured knowledge from a small knowledge graph, uses an LLM to generate a short slide deck + narration (grounded to sources), and automatically converts the slides to a Manim animation.
 
-(Problem statement referenced from Statements.pdf) 
+(Problem statement referenced from Statements.pdf provided via mail) 
 
 ## What I submit
 - `README.md` (this file)
