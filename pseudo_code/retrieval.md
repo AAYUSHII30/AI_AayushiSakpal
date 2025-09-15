@@ -5,4 +5,3 @@ Retrieval (plain steps)
 4. Graph-neighbor search: expand each candidate by prerequisites and examples.
 5. Rank combined candidates by score = alpha * embedding_sim + beta * graph_score.
 6. Return top N nodes (include excerpts) as context for LLM.
-
