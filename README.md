@@ -1,21 +1,53 @@
 # AI_AayushiSakpal
 AI-Powered Knowledge Graph to Manim Animation Automation
 ## Short description
-A pipeline that accepts a student query (concept), retrieves structured knowledge from a small knowledge graph, uses an LLM to generate a short slide deck + narration (grounded to sources), and automatically converts the slides to a Manim animation.
+A pipeline that accepts a student query (concept), retrieves structured knowledge from a small knowledge graph, uses an AI model (LLM) to generate a short slide deck + narration (grounded to sources), and automatically converts the slides to a **Manim animation video**.
 
 (Problem statement referenced from Statements.pdf provided via mail) 
 
 ## What I submit
-- `README.md` (this file)
-- `diagrams/architecture.png` (pipeline diagram)
-- `pseudo_code/` (kg_build.md, retrieval.md, manim_generation.md)
-- `samples/small_kg.json` (tiny knowledge graph)
-- `samples/sample_prompts.txt` (LLM prompt templates)
-- `manim_templates/base_slide_template.py` and `samples/demo_scene.py` (small runnable Manim demo)
-- `references.md` (tools & notes)
+- `README.md` → this file (main submission report)  
+- `diagrams/architecture.png` → pipeline diagram  
+- `pseudo_code/` → step-by-step pseudo-code  
+  - `kg_build.md`  
+  - `retrieval.md`  
+  - `manim_generation.md`  
+- `samples/` → tiny demo dataset + prompt + sample Manim code  
+  - `small_kg.json` (tiny knowledge graph)  
+  - `sample_prompts.txt` (LLM prompt template)  
+  - `demo_scene.py` (runnable Manim demo)  
+- `manim_templates/base_slide_template.py` → Manim code template  
+- `references.md` → tools, libraries, submission notes  
 
 ## Quick pipeline (one line)
 Query → Hybrid retrieval from KG + embeddings → LLM (RAG) generates structured slides with `sources` → Template → Manim → Video
+
+## System Architecture  
+[ Student Query ]
+        |
+        v
+[ Knowledge Graph ] ---> (provides context)
+        |
+        v
+[ AI Module (LLM) ] -- generates slides + narration -->
+        |
+        v
+[ Formatter ] --> [ Manim Template Generator ] --> [ Manim Renderer ]
+        |
+        v
+[ Output Video for Student ]
+
+## Pseudo-code (high-level)  
+input: "Dynamic Programming"
+
+1. Search knowledge graph for concept + related nodes
+2. Collect excerpts (definitions, examples, problems)
+3. Send to AI model → generate structured slides JSON:
+      { "title":..., "bullets":[], "narration":..., "sources":[] }
+4. Formatter cleans structure and fills Manim templates
+5. Manim renders MP4 animation
+
+output: final educational video
 
 ## How to run the small demo locally
 1. Install Manim Community Edition (see manim docs).  
