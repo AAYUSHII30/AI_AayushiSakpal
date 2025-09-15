@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {"id":"C1","type":"Concept","label":"Dynamic Programming","excerpt":"DP uses overlapping subproblems and optimal substructure.","source":"CLRS Ch15"},
+    {"id":"C2","type":"Concept","label":"Memoization","excerpt":"Memoization caches results of recursive calls to avoid recomputation.","source":"Lecture Notes"},
+    {"id":"C3","type":"Problem","label":"0/1 Knapsack","excerpt":"Choose items to maximize value under a weight limit. Classic DP example.","source":"CLRS Ch16"},
+    {"id":"E1","type":"Example","label":"Fibonacci with memoization","excerpt":"Compute fib(n) recursively and cache results to get O(n) time.","source":"Lecture Notes"}
+  ],
+  "edges": [
+    {"from":"C1","to":"C2","relation":"uses"},
+    {"from":"C1","to":"C3","relation":"applies_to"},
+    {"from":"C1","to":"E1","relation":"explained_by"}
+  ]
+}
