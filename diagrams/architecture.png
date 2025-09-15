@@ -1,0 +1,15 @@
+Simple ASCII version
+[ Student Query ]
+        |
+        v
+[ Knowledge Graph ] ---> (provides context)
+        |
+        v
+[ AI Module (LLM) ] -- generates slides + narration -->
+        |
+        v
+[ Formatter ] --> [ Manim Template Generator ] --> [ Manim Renderer ]
+        |
+        v
+[ Output Video for Student ]
+
