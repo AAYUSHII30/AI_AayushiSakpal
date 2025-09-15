@@ -1,0 +1,14 @@
+TASK: Generate a structured slide deck for the requested concept using ONLY the provided context nodes (excerpts). Do not invent facts. If you must infer, mark with "—SOURCE: INFERRED—".
+
+INPUT:
+- Concept requested: {{CONCEPT}}
+- Context nodes (id + excerpt): {{CONTEXT_NODES}}
+
+CONSTRAINTS:
+- Output must be valid JSON with key "slides": []
+- Each slide: { "title":"", "bullets":["..."], "narration":"...", "sources":["node_id1","node_id2"] }
+- 4 slides maximum for this demo (Intro, Key ideas, Worked example, Summary)
+- For the Worked example slide, include step-by-step short computations if possible.
+
+If insufficient context, return:
+{ "error": "INSUFFICIENT_SOURCES", "missing": ["..."] }
